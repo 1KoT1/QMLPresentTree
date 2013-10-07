@@ -37,7 +37,7 @@ void TreeItem::addChildItem(TreeItem *childItem){
 }
 
 bool TreeItem::isOpen() const{
-return m_isOpen;
+    return m_isOpen;
 }
 
 void TreeItem::setIsOpen(bool isOpen){
