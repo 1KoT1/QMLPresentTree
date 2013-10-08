@@ -15,7 +15,7 @@ public:
 
     Q_PROPERTY(QList<QObject*> childItems READ childItemsAsQObject NOTIFY childItemsChanged)
     const QList<TreeItem *> &childItems() const;
-    const QList<QObject *> &childItemsAsQObject() const;
+    const QList<QObject *> childItemsAsQObject() const;
     void addChildItem(TreeItem * childItem);
 
     Q_PROPERTY(bool isOpen READ isOpen WRITE setIsOpen NOTIFY isOpenChanged)
@@ -33,7 +33,6 @@ public slots:
 private:
     QString m_content;
     QList<TreeItem *> m_childItems;
-    QList<QObject *> m_childItemsAsQObject;
     bool m_isOpen;
 };
 

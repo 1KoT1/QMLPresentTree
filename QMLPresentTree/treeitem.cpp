@@ -4,7 +4,6 @@ TreeItem::TreeItem(QString content, QObject *parent) :
     QObject(parent),
     m_content(content),
     m_childItems(QList<TreeItem*>()),
-    m_childItemsAsQObject(QList<QObject*>()),
     m_isOpen(false)
 {
 }
@@ -24,13 +23,16 @@ const QList<TreeItem *> &TreeItem::childItems() const{
     return m_childItems;
 }
 
-const QList<QObject *> &TreeItem::childItemsAsQObject() const{
-    return m_childItemsAsQObject;
+const QList<QObject *> TreeItem::childItemsAsQObject() const{
+    QList<QObject *> res;
+    res.reserve(m_childItems.count());
+    for(auto i : m_childItems)
+        res.append(i);
+    return res;
 }
 
 void TreeItem::addChildItem(TreeItem *childItem){
     m_childItems.append(childItem);
-    m_childItemsAsQObject.append(childItem);
     emit childItemsChanged();
     if(m_childItems.count() == 1)
         emit hasChildChanged();
