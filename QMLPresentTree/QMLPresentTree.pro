@@ -1,3 +1,4 @@
+CONFIG += c++11
 # Add more folders to ship with the application, here
 folder_01.source = qml/QMLPresentTree
 folder_01.target = qml
