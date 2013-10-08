@@ -19,7 +19,6 @@ Model::Model(QObject *parent) :
     m_tree.append(createTreeItem());
     m_tree.append(createTreeItem());
     m_tree.append(createTreeItem());
-    m_tree.append(createTreeItem());
 }
 
 const QList<TreeItem *> &Model::tree() const{
