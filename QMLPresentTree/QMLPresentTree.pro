@@ -14,7 +14,8 @@ QML_IMPORT_PATH =
 
 # The .cpp file which was generated for your project. Feel free to hack it.
 SOURCES += main.cpp \
-    treeitem.cpp
+    treeitem.cpp \
+    model.cpp
 
 # Installation path
 # target.path =
@@ -24,4 +25,5 @@ include(qtquick2applicationviewer/qtquick2applicationviewer.pri)
 qtcAddDeployment()
 
 HEADERS += \
-    treeitem.h
+    treeitem.h \
+    model.h
