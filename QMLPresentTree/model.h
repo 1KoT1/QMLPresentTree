@@ -12,7 +12,7 @@ public:
     explicit Model(QObject *parent = 0);
 
     Q_PROPERTY(QList<QObject*> tree READ treeAsQObjects NOTIFY treeChanged)
-    const QList<TreeItem*> tree() const;
+    const QList<TreeItem*> &tree() const;
     const QList<QObject*> treeAsQObjects() const;
 
 signals:
